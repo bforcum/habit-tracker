@@ -43,6 +43,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4afe1235-06ee-4e12-b2ea-bd0a498b8d93"
+      }
+    },
+    "owner": "bforc"
   }
 }
