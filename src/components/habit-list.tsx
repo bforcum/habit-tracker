@@ -84,7 +84,11 @@ export class HabitList extends Component<HabitListProps, HabitListState> {
 			]}>
 				{this.state.habits.map((habit: Habit, index: number) => <HabitCard key={habit.uuid} habit={habit} mode={this.props.mode} onChange={(newHabit) => {
 					let newHabits = structuredClone(this.state.habits);
-					newHabits[index] = newHabit;
+					if (newHabit == null) {
+						newHabits.splice(index, 1)
+					} else {
+						newHabits[index] = newHabit;
+					}
 					this.setState({habits: newHabits})
 					this.updateProgress(newHabits)
 				}}/>)}
