@@ -59,11 +59,9 @@ export class HabitList extends Component<HabitListProps, HabitListState> {
 		let progress = 0;
 		for (let habit of habits) {
 			if (habit.timeCompleted.getTime() > time) {
-				console.log(habit.timeCompleted.getTime() - time);
 				progress += 1
 			}
 		}
-		console.log(progress)
 		this.props.onProgress(progress / Math.max(habits.length, 1));
 	}
 
@@ -84,7 +82,7 @@ export class HabitList extends Component<HabitListProps, HabitListState> {
 					paddingBottom: 20,
 				}
 			]}>
-				{this.state.habits.map((habit: Habit, index: number) => <HabitCard key={habit.uuid} habit={habit} onToggle={(newHabit) => {
+				{this.state.habits.map((habit: Habit, index: number) => <HabitCard key={habit.uuid} habit={habit} mode={this.props.mode} onChange={(newHabit) => {
 					let newHabits = structuredClone(this.state.habits);
 					newHabits[index] = newHabit;
 					this.setState({habits: newHabits})

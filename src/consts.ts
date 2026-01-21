@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between'
   },
   column: {
     gap: 20
